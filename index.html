@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Royal Biryani Plaza & Restaurant | Biryani & Bengali Cuisine in Daspur</title>
+  <meta name="description" content="Visit Royal Biryani Plaza & Restaurant in Sujanagar, Daspur, West Bengal for royal biryani, Bengali flavours and delicious family dining.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --maroon: #5e1b1b;
+      --maroon-dark: #3e0f0f;
+      --gold: #c9a13b;
+      --gold-light: #e7c65c;
+      --gold-pale: #f5e6b8;
+      --cream: #fdf7ed;
+      --white: #ffffff;
+      --veg: #2e7d32;
+      --nonveg: #c0392b;
+      --shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+      --font-serif: 'Playfair Display', serif;
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-bengali: 'Noto Serif Bengali', serif;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: #2c1e1e;
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-bottom: 70px;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 600; color: var(--maroon); }
+    h1 { font-size: clamp(2rem, 8vw, 4.2rem); line-height: 1.2; }
+    h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+    h3 { font-size: clamp(1.4rem, 3.5vw, 2rem); }
+
+    .bengali-quote {
+      font-family: var(--font-bengali);
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: var(--maroon-dark);
+      line-height: 1.8;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    .container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 1.2rem; }
+
+    .section-title { text-align: center; margin-bottom: 2.5rem; }
+    .section-title h2 { color: var(--maroon-dark); margin-bottom: 0.3rem; }
+    .section-title .sub { font-family: var(--font-bengali); font-size: 1.2rem; color: var(--gold); font-weight: 500; }
+
+    .divider-gold { display: flex; align-items: center; justify-content: center; gap: 0.8rem; margin: 1.2rem 0; }
+    .divider-gold span { display: block; width: 50px; height: 2px; background: var(--gold); }
+    .divider-gold i { color: var(--gold); font-style: normal; font-size: 1.2rem; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      padding: 0.9rem 1.8rem; border-radius: 50px; font-weight: 600; font-size: 0.95rem;
+      font-family: var(--font-body); letter-spacing: 0.3px; transition: all 0.25s ease;
+      border: 2px solid transparent; cursor: pointer; text-align: center; white-space: nowrap;
+    }
+    .btn-gold { background: var(--gold); color: var(--maroon-dark); border-color: var(--gold); }
+    .btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,161,59,0.3); }
+    .btn-outline-gold { background: transparent; color: var(--gold); border-color: var(--gold); }
+    .btn-outline-gold:hover { background: var(--gold); color: var(--maroon-dark); transform: translateY(-2px); }
+    .btn-maroon { background: var(--maroon); color: var(--white); border-color: var(--maroon); }
+    .btn-maroon:hover { background: var(--maroon-dark); border-color: var(--maroon-dark); transform: translateY(-2px); }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(253,247,237,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--gold);
+      padding: 0.7rem 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .nav-container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; flex-direction: column; line-height: 1.15; }
+    .nav-brand .brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.25rem; color: var(--maroon); letter-spacing: 0.02em; }
+    .nav-brand .brand-tagline { font-size: 0.68rem; color: var(--gold); letter-spacing: 1.5px; font-weight: 500; text-transform: uppercase; margin-top: 2px; }
+
+    .nav-links { display: flex; gap: 1.6rem; align-items: center; }
+    .nav-links a { font-weight: 500; font-size: 0.92rem; color: var(--maroon-dark); position: relative; transition: color 0.2s; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s ease; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; background: none; border: none; }
+    .hamburger span { display: block; width: 28px; height: 3px; background: var(--maroon); border-radius: 3px; }
+
+    .mobile-nav-overlay { display: none; position: fixed; inset: 0; background: rgba(62,15,15,0.7); backdrop-filter: blur(8px); z-index: 1001; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+    .mobile-nav-overlay.active { display: flex; opacity: 1; pointer-events: auto; }
+    .mobile-nav-panel { background: var(--cream); padding: 2.5rem 2rem; border-radius: 24px; width: 85%; max-width: 360px; text-align: center; border: 3px solid var(--gold); box-shadow: var(--shadow); position: relative; }
+    .mobile-nav-panel a { display: block; padding: 0.9rem; font-size: 1.25rem; font-family: var(--font-serif); color: var(--maroon); border-bottom: 1px solid rgba(201,161,59,0.3); }
+    .mobile-nav-panel a:last-of-type { border-bottom: none; }
+    .mobile-nav-panel a:hover { color: var(--gold); }
+    .close-nav { position: absolute; top: 10px; right: 16px; font-size: 2rem; background: none; border: none; color: var(--maroon); cursor: pointer; line-height: 1; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative; min-height: 90vh;
+      display: flex; align-items: center; justify-content: center; text-align: center;
+      background: linear-gradient(rgba(62,15,15,0.75), rgba(62,15,15,0.8)),
+                  url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=1600&q=80') center/cover no-repeat;
+      color: var(--white); padding: 4rem 1.2rem;
+    }
+    .hero-content { max-width: 820px; z-index: 2; position: relative; }
+    .hero-crown { font-size: 2.5rem; color: var(--gold); margin-bottom: 0.5rem; line-height: 1; }
+    .hero h1 { color: var(--gold-light); font-size: clamp(2rem, 9vw, 4rem); font-weight: 700; text-shadow: 3px 3px 12px rgba(0,0,0,0.6); margin-bottom: 0.5rem; line-height: 1.15; }
+    .hero .tagline { font-family: var(--font-serif); font-size: clamp(1.1rem, 3.5vw, 1.7rem); font-style: italic; color: var(--gold); margin-bottom: 0.8rem; }
+    .hero .supporting { font-size: clamp(0.95rem, 2.5vw, 1.15rem); color: #f0e0d0; max-width: 600px; margin: 0 auto 2rem; line-height: 1.7; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; }
+    .hero-buttons .btn { padding: 0.85rem 1.6rem; font-size: 0.9rem; }
+
+    /* ---------- BENGALI STRIP ---------- */
+    .bengali-strip { background: var(--maroon); color: var(--gold-pale); padding: 2.8rem 1.2rem; text-align: center; border-top: 4px solid var(--gold); border-bottom: 4px solid var(--gold); }
+    .bengali-strip .bengali-quote { color: var(--gold-pale); max-width: 900px; margin: 0 auto; }
+
+    /* ---------- ABOUT ---------- */
+    .about { padding: 4rem 0; background: var(--cream); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; max-width: 1100px; margin: 0 auto; }
+    .about-text h3 { color: var(--maroon); font-size: 2rem; margin-bottom: 0.5rem; }
+    .about-text p { color: #3d2a2a; margin-bottom: 1rem; font-size: 1.05rem; line-height: 1.8; }
+    .about-services { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+    .service-badge { background: var(--white); border: 1.5px solid var(--gold); padding: 0.5rem 1.2rem; border-radius: 40px; font-weight: 500; font-size: 0.9rem; color: var(--maroon); box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+    .about-events { margin-top: 1.5rem; padding: 1.2rem 1.5rem; background: rgba(201,161,59,0.08); border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0; }
+    .about-events p { font-weight: 600; color: var(--maroon); margin-bottom: 0.3rem; }
+    .about-events ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; font-size: 0.95rem; }
+    .about-events li::before { content: '✦'; color: var(--gold); margin-right: 0.4rem; }
+    .about-image { border-radius: 20px; overflow: hidden; border: 4px solid var(--gold); box-shadow: var(--shadow); }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3; }
+
+    /* ---------- SIGNATURE MENU (4 dishes) ---------- */
+    .menu-section { padding: 4rem 0; background: var(--white); }
+    .menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.8rem; max-width: 1200px; margin: 0 auto; }
+    .menu-card { background: var(--cream); border: 2px solid var(--gold); border-radius: 20px; overflow: hidden; box-shadow: 0 8px 24px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+    .menu-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+    .menu-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-bottom: 2px solid var(--gold); }
+    .menu-card-body { padding: 1.2rem 1.2rem 1.5rem; display: flex; flex-direction: column; flex-grow: 1; }
+    .menu-card-body .dish-name { font-family: var(--font-serif); font-weight: 700; font-size: 1.25rem; color: var(--maroon-dark); margin-bottom: 0.3rem; }
+    .menu-card-body .dish-price { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--maroon); margin-bottom: 0.6rem; }
+
+    .nonveg-indicator { display: inline-flex; align-items: center; gap: 0.4rem; background: #c0392b; color: white; font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.7rem; border-radius: 30px; letter-spacing: 1px; width: fit-content; margin-top: auto; }
+    .nonveg-indicator::before { content: '●'; font-size: 0.6rem; }
+
+    /* ---------- SEARCHABLE FULL MENU ---------- */
+    .full-menu-section { padding: 3rem 0 4rem; background: var(--cream); }
+    .search-wrap { position: sticky; top: 76px; z-index: 90; background: rgba(253,247,237,0.98); backdrop-filter: blur(10px); border-top: 1px solid rgba(201,161,59,0.3); border-bottom: 2px solid var(--gold); padding: 0.9rem 1rem; box-shadow: 0 4px 16px rgba(0,0,0,0.05); margin: 0 -1.2rem 1.5rem; }
+    .search-inner { max-width: 720px; margin: 0 auto; position: relative; }
+    .search-input { width: 100%; font-size: 1rem; font-family: var(--font-body); padding: 0.95rem 3rem; border: 2px solid var(--gold); border-radius: 50px; background: var(--white); color: var(--maroon-dark); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    .search-input:focus { border-color: var(--maroon); box-shadow: 0 0 0 4px rgba(201,161,59,0.2); }
+    .search-icon { position: absolute; left: 1.1rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--gold); pointer-events: none; }
+    .clear-btn { position: absolute; right: 0.7rem; top: 50%; transform: translateY(-50%); background: var(--maroon); color: var(--gold-light); border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; display: none; font-weight: bold; line-height: 1; }
+    .clear-btn.visible { display: block; }
+
+    .filter-chips { display: flex; flex-wrap: nowrap; overflow-x: auto; gap: 0.5rem; padding: 0.3rem 0 1rem; max-width: 1240px; margin: 0 auto; scrollbar-width: thin; }
+    .filter-chips::-webkit-scrollbar { height: 4px; }
+    .filter-chips::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+    .chip { flex-shrink: 0; padding: 0.45rem 1rem; border: 1.5px solid var(--gold); border-radius: 30px; background: var(--white); color: var(--maroon); font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all 0.2s; white-space: nowrap; font-family: var(--font-body); }
+    .chip:hover { background: rgba(201,161,59,0.15); }
+    .chip.active { background: var(--maroon); color: var(--gold-light); border-color: var(--maroon); }
+
+    .result-count { text-align: center; color: #7a6a56; font-size: 0.9rem; margin-bottom: 1.2rem; font-family: var(--font-body); }
+    .result-count strong { color: var(--maroon); }
+
+    .category-block { margin-bottom: 2.2rem; }
+    .category-title { font-family: var(--font-serif); font-size: clamp(1.3rem, 4vw, 1.7rem); color: var(--maroon); padding: 0.6rem 0 0.6rem 1rem; border-left: 4px solid var(--gold); margin-bottom: 1rem; background: linear-gradient(90deg, rgba(201,161,59,0.1), transparent); }
+
+    .item-list { display: grid; grid-template-columns: 1fr; gap: 0.5rem; }
+    @media (min-width: 700px) { .item-list { grid-template-columns: 1fr 1fr; gap: 0.6rem 1.5rem; } }
+
+    .menu-item { display: flex; align-items: baseline; justify-content: space-between; gap: 0.8rem; padding: 0.7rem 0.9rem; border-radius: 10px; background: var(--white); border: 1px solid rgba(201,161,59,0.25); transition: all 0.2s; font-size: 0.98rem; }
+    .menu-item:hover { background: #fdf2dc; border-color: var(--gold); transform: translateX(2px); }
+    .item-left { display: flex; align-items: center; gap: 0.6rem; flex: 1; min-width: 0; }
+    .veg-dot { width: 14px; height: 14px; border: 2px solid; border-radius: 3px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .veg-dot::after { content: ''; width: 6px; height: 6px; border-radius: 50%; }
+    .veg-dot.veg { border-color: var(--veg); }
+    .veg-dot.veg::after { background: var(--veg); }
+    .veg-dot.nonveg { border-color: var(--nonveg); }
+    .veg-dot.nonveg::after { background: var(--nonveg); }
+    .item-name { color: var(--maroon-dark); font-weight: 500; white-space: normal; word-break: break-word; line-height: 1.35; }
+    .item-right { display: flex; align-items: center; gap: 0.7rem; flex-shrink: 0; }
+    .item-price { font-family: var(--font-serif); font-weight: 700; font-size: 1.05rem; color: var(--maroon); white-space: nowrap; }
+    .item-tag { font-size: 0.62rem; font-weight: 700; padding: 0.15rem 0.45rem; border-radius: 4px; letter-spacing: 0.5px; }
+    .item-tag.veg { background: rgba(46,125,50,0.12); color: var(--veg); }
+    .item-tag.nonveg { background: rgba(192,57,43,0.12); color: var(--nonveg); }
+
+    .no-results { text-align: center; padding: 3rem 1rem; color: #7a6a56; }
+    .no-results .emoji { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .no-results p { font-family: var(--font-serif); font-size: 1.2rem; color: var(--maroon); }
+
+    /* ---------- FAVOURITES ---------- */
+    .favourites { padding: 4rem 0; background: var(--maroon); color: var(--white); }
+    .favourites .section-title h2 { color: var(--gold-light); }
+    .favourites .section-title .sub { color: var(--gold); }
+    .fav-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .fav-card { background: rgba(255,255,255,0.08); border: 2px solid var(--gold); border-radius: 18px; padding: 1.5rem 1rem; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; transition: background 0.3s, transform 0.3s; }
+    .fav-card:hover { background: rgba(255,255,255,0.15); transform: scale(1.02); }
+    .fav-card .fav-name { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700; color: var(--gold-pale); }
+    .fav-card .fav-price { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--gold); }
+    .fav-card .nonveg-indicator { background: #c0392b; margin-top: 0.3rem; }
+
+    /* ---------- GALLERY ---------- */
+    .gallery { padding: 4rem 0; background: var(--cream); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; max-width: 1000px; margin: 0 auto; }
+    .gallery-item { border-radius: 16px; overflow: hidden; border: 3px solid var(--gold); box-shadow: 0 6px 18px rgba(0,0,0,0.06); transition: transform 0.35s, box-shadow 0.35s; position: relative; aspect-ratio: 4/3; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .gallery-item:hover { box-shadow: 0 14px 36px rgba(0,0,0,0.15); }
+
+    /* ---------- CONTACT ---------- */
+    .contact { padding: 4rem 0; background: var(--white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; max-width: 1000px; margin: 0 auto; align-items: start; }
+    .contact-info h3 { font-size: 1.8rem; color: var(--maroon); margin-bottom: 0.8rem; }
+    .contact-info p { font-size: 1.05rem; color: #3d2a2a; margin-bottom: 0.6rem; line-height: 1.7; }
+    .contact-info .phone-link { font-family: var(--font-serif); font-size: 1.6rem; font-weight: 700; color: var(--maroon); display: inline-block; margin: 0.5rem 0 1.2rem; border-bottom: 2px solid transparent; }
+    .contact-info .phone-link:hover { border-color: var(--gold); }
+    .contact-buttons { display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .hours-box { background: var(--cream); border: 2px solid var(--gold); border-radius: 20px; padding: 2rem; box-shadow: var(--shadow); }
+    .hours-box h4 { font-family: var(--font-serif); font-size: 1.4rem; color: var(--maroon); margin-bottom: 1rem; text-align: center; }
+    .hours-row { display: flex; justify-content: space-between; padding: 0.6rem 0; border-bottom: 1px solid rgba(201,161,59,0.3); font-size: 1rem; }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row .day { font-weight: 600; color: var(--maroon-dark); }
+    .hours-row .time { color: #5a3e3e; }
+
+    /* ---------- FOOTER ---------- */
+    .footer { background: var(--maroon-dark); color: #e8d9c5; padding: 3rem 0 2rem; border-top: 4px solid var(--gold); }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .footer h4 { font-family: var(--font-serif); color: var(--gold-light); font-size: 1.3rem; margin-bottom: 1rem; }
+    .footer p, .footer a { color: #d4c0a8; font-size: 0.95rem; line-height: 1.8; }
+    .footer a:hover { color: var(--gold-light); }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 0.4rem; }
+    .footer-bottom { text-align: center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(201,161,59,0.3); font-size: 0.85rem; color: #b8a088; }
+
+    /* ---------- MOBILE BOTTOM NAV ---------- */
+    .mobile-bottom-nav { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: var(--maroon-dark); border-top: 3px solid var(--gold); z-index: 999; padding: 0.5rem 0.2rem; justify-content: space-around; align-items: center; box-shadow: 0 -4px 20px rgba(0,0,0,0.2); }
+    .mobile-bottom-nav a { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; color: var(--gold-pale); font-size: 0.65rem; font-weight: 600; padding: 0.3rem 0.6rem; border-radius: 10px; min-width: 60px; text-align: center; letter-spacing: 0.3px; }
+    .mobile-bottom-nav a:hover, .mobile-bottom-nav a:active { background: rgba(201,161,59,0.2); }
+    .mobile-bottom-nav .nav-icon { font-size: 1.3rem; line-height: 1; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 1024px) {
+      .menu-grid { grid-template-columns: repeat(2, 1fr); }
+      .fav-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      body { padding-bottom: 75px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mobile-bottom-nav { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+      .about-image { order: -1; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 1.8rem; }
+      .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem 1.5rem; }
+      .gallery-grid { gap: 0.8rem; }
+      .hero-buttons .btn { padding: 0.75rem 1.2rem; font-size: 0.85rem; }
+      .menu-card-body .dish-price { font-size: 1.5rem; }
+      .search-wrap { top: 68px; }
+    }
+    @media (max-width: 480px) {
+      .menu-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .fav-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+      .nav-brand .brand-name { font-size: 1rem; }
+      .nav-brand .brand-tagline { font-size: 0.58rem; letter-spacing: 1px; }
+      .hero { min-height: 80vh; padding: 3rem 1rem; }
+      .hero-buttons { flex-direction: column; align-items: stretch; }
+      .hero-buttons .btn { width: 100%; }
+      .contact-buttons { flex-direction: column; }
+      .contact-buttons .btn { width: 100%; }
+      .item-name { font-size: 0.92rem; }
+      .item-price { font-size: 1rem; }
+      .menu-item { padding: 0.6rem 0.7rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== STICKY NAVIGATION ========== -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container nav-container">
+      <a href="#home" class="nav-brand" aria-label="Royal Biryani Plaza home">
+        <span class="brand-name">Royal Biryani Plaza</span>
+        <span class="brand-tagline">Experience the Royal Flavor</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT</a>
+        <a href="#menu">MENU</a>
+        <a href="#full-menu">FULL MENU</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#contact">CONTACT</a>
+      </div>
+
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-panel">
+      <button class="close-nav" id="closeNavBtn" aria-label="Close menu">&times;</button>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Signature Menu</a>
+      <a href="#full-menu">Full Menu (Search)</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-crown">♛</div>
+      <h1>ROYAL BIRYANI PLAZA &amp; RESTAURANT</h1>
+      <p class="tagline">“Experience the Royal Flavor”</p>
+      <p class="supporting">Where royal biryani meets the rich flavours and traditions of Bengal.</p>
+      <div class="hero-buttons">
+        <a href="#menu" class="btn btn-gold">VIEW MENU</a>
+        <a href="tel:09932431221" class="btn btn-outline-gold">CALL NOW</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Royal+Biryani+Plaza+%26+Restaurant%2C+Sujanagar%2C+Daspur%2C+West+Bengal+721211" target="_blank" rel="noopener" class="btn btn-outline-gold">GET DIRECTIONS</a>
+        <a href="https://wa.me/919932431221" target="_blank" rel="noopener" class="btn btn-gold">WHATSAPP</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BENGALI QUOTE STRIP ========== -->
+  <section class="bengali-strip">
+    <div class="container">
+      <p class="bengali-quote">“স্বাদের টানে, বাংলার ঘ্রাণে — প্রতিটি পদে ভালোবাসার ছোঁয়া।”</p>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Story</h2>
+        <p class="sub">বাঙালিয়ানার আসল ঠিকানা</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>Royal Flavours, Warm Hospitality</h3>
+          <p>At Royal Biryani Plaza &amp; Restaurant, we bring together the grandeur of royal biryani and the soulful essence of Bengali cuisine. Every dish is prepared with care and served with warmth.</p>
+          <p>Whether you choose to dine in, take away, or get fast delivery — we ensure a memorable experience rooted in tradition and taste.</p>
+          <div class="about-services">
+            <span class="service-badge">Dine-In</span>
+            <span class="service-badge">Takeaway</span>
+            <span class="service-badge">Fast Delivery</span>
+          </div>
+          <div class="about-events">
+            <p>We also arrange for:</p>
+            <ul>
+              <li>Birthday Celebrations</li>
+              <li>Corporate Meetings</li>
+              <li>Rice Ceremonies</li>
+              <li>Customized Designer Cakes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=800&q=80" alt="Royal biryani served in traditional style" loading="lazy" width="600" height="450">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SIGNATURE MENU (4 dishes) ========== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-title">
+        <h2>Our Signature Menu</h2>
+        <p class="sub">চারটি রাজকীয় পদ</p>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=80" alt="Chicken Biryani" loading="lazy" width="600" height="450">
+          <div class="menu-card-body">
+            <div class="dish-name">Chicken Biryani</div>
+            <div class="dish-price">₹130</div>
+            <span class="nonveg-indicator">NON-VEG</span>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1642821373181-696a54913e93?w=600&q=80" alt="Mutton Biryani" loading="lazy" width="600" height="450">
+          <div class="menu-card-body">
+            <div class="dish-name">Mutton Biryani</div>
+            <div class="dish-price">₹350</div>
+            <span class="nonveg-indicator">NON-VEG</span>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=600&q=80" alt="Chicken Kasha" loading="lazy" width="600" height="450">
+          <div class="menu-card-body">
+            <div class="dish-name">Chicken Kasha</div>
+            <div class="dish-price">₹170</div>
+            <span class="nonveg-indicator">NON-VEG</span>
+          </div>
+        </article>
+        <article class="menu-card">
+          <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=80" alt="Chicken Tandoori" loading="lazy" width="600" height="450">
+          <div class="menu-card-body">
+            <div class="dish-name">Chicken Tandoori</div>
+            <div class="dish-price">₹450</div>
+            <span class="nonveg-indicator">NON-VEG</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SEARCHABLE FULL MENU ========== -->
+  <section class="full-menu-section" id="full-menu">
+    <div class="container">
+      <div class="section-title">
+        <h2>Full Menu</h2>
+        <p class="sub">সম্পূর্ণ মেনু — খুঁজুন</p>
+      </div>
+
+      <div class="search-wrap">
+        <div class="search-inner">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search dish name or price (e.g. biryani, 200, roll, veg)" autocomplete="off" aria-label="Search menu">
+          <button class="clear-btn" id="clearBtn" aria-label="Clear search">✕</button>
+        </div>
+      </div>
+
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-cat="all">All</button>
+        <button class="chip" data-cat="Royal Signature Biryani">Biryani</button>
+        <button class="chip" data-cat="Appetizing Starters">Starters</button>
+        <button class="chip" data-cat="Soups">Soups</button>
+        <button class="chip" data-cat="Snacks &amp; Rolls">Rolls</button>
+        <button class="chip" data-cat="Indian Main Course">Main Course</button>
+        <button class="chip" data-cat="Tandoori &amp; Fresh Breads">Tandoori</button>
+        <button class="chip" data-cat="Chinese Gravy Side Dishes">Chinese</button>
+        <button class="chip" data-cat="Wok-Tossed Fried Rice">Fried Rice</button>
+        <button class="chip" data-cat="Noodles &amp; Chowmein">Noodles</button>
+        <button class="chip" data-cat="Cold Drinks &amp; Refreshments">Drinks</button>
+        <button class="chip" data-cat="Mocktails &amp; Premium Ice Cream">Desserts</button>
+      </div>
+
+      <div class="result-count" id="resultCount"></div>
+      <div id="menuOutput"></div>
+    </div>
+  </section>
+
+  <!-- ========== ROYAL FAVOURITES ========== -->
+  <section class="favourites" id="favourites">
+    <div class="container">
+      <div class="section-title">
+        <h2>ROYAL FAVOURITES</h2>
+        <p class="sub">রাজকীয় স্বাদ</p>
+      </div>
+      <div class="fav-grid">
+        <div class="fav-card"><div class="fav-name">Chicken Biryani</div><div class="fav-price">₹130</div><span class="nonveg-indicator">NON-VEG</span></div>
+        <div class="fav-card"><div class="fav-name">Mutton Biryani</div><div class="fav-price">₹350</div><span class="nonveg-indicator">NON-VEG</span></div>
+        <div class="fav-card"><div class="fav-name">Chicken Kasha</div><div class="fav-price">₹170</div><span class="nonveg-indicator">NON-VEG</span></div>
+        <div class="fav-card"><div class="fav-name">Chicken Tandoori</div><div class="fav-price">₹450</div><span class="nonveg-indicator">NON-VEG</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery" id="gallery">
+    <div class="container">
+      <div class="section-title">
+        <h2>Food Gallery</h2>
+        <p class="sub">মশলার মায়া, স্বাদের ঐতিহ্য</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=800&q=80" alt="Chicken Biryani" loading="lazy" width="600" height="450"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1642821373181-696a54913e93?w=800&q=80" alt="Mutton Biryani" loading="lazy" width="600" height="450"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=800&q=80" alt="Chicken Kasha" loading="lazy" width="600" height="450"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=800&q=80" alt="Chicken Tandoori" loading="lazy" width="600" height="450"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Visit Us</h2>
+        <p class="sub">আমাদের ঠিকানা</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>ROYAL BIRYANI PLAZA &amp; RESTAURANT</h3>
+          <p>Sujanagar, Daspur,<br>West Bengal 721211</p>
+          <a href="tel:09932431221" class="phone-link">09932431221</a>
+          <div class="contact-buttons">
+            <a href="tel:09932431221" class="btn btn-maroon">CALL NOW</a>
+            <a href="https://wa.me/919932431221" target="_blank" rel="noopener" class="btn btn-gold">WHATSAPP</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Royal+Biryani+Plaza+%26+Restaurant%2C+Sujanagar%2C+Daspur%2C+West+Bengal+721211" target="_blank" rel="noopener" class="btn btn-outline-gold">GET DIRECTIONS</a>
+          </div>
+        </div>
+        <div class="hours-box">
+          <h4>Opening Hours</h4>
+          <div class="hours-row"><span class="day">Monday – Thursday</span><span class="time">10:00 AM – 11:00 PM</span></div>
+          <div class="hours-row"><span class="day">Friday – Sunday</span><span class="time">10:00 AM – 11:30 PM</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>ROYAL BIRYANI PLAZA &amp; RESTAURANT</h4>
+          <p style="font-family:var(--font-serif); font-style:italic; color:var(--gold);">“Experience the Royal Flavor”</p>
+          <p>Sujanagar, Daspur, West Bengal 721211</p>
+          <p><a href="tel:09932431221">09932431221</a></p>
+        </div>
+        <div>
+          <h4>Opening Hours</h4>
+          <p>Monday – Thursday: 10:00 AM – 11:00 PM</p>
+          <p>Friday – Sunday: 10:00 AM – 11:30 PM</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Signature Menu</a></li>
+            <li><a href="#full-menu">Full Menu</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="divider-gold" style="margin-bottom:0.8rem;"><span style="width:30px;"></span><i>✦</i><span style="width:30px;"></span></div>
+        <p>&copy; 2025 Royal Biryani Plaza &amp; Restaurant. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== MOBILE BOTTOM NAV ========== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile quick actions">
+    <a href="tel:09932431221"><span class="nav-icon">📞</span>CALL</a>
+    <a href="https://wa.me/919932431221" target="_blank" rel="noopener"><span class="nav-icon">💬</span>WHATSAPP</a>
+    <a href="#full-menu"><span class="nav-icon">📋</span>MENU</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Royal+Biryani+Plaza+%26+Restaurant%2C+Sujanagar%2C+Daspur%2C+West+Bengal+721211" target="_blank" rel="noopener"><span class="nav-icon">📍</span>DIRECTIONS</a>
+  </nav>
+
+  <!-- ========== STRUCTURED DATA ========== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Royal Biryani Plaza & Restaurant",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Sujanagar, Daspur",
+      "addressLocality": "Daspur",
+      "addressRegion": "West Bengal",
+      "postalCode": "721211",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919932431221",
+    "servesCuisine": ["Biryani", "Bengali", "Indian", "Tandoori"],
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "10:00", "closes": "23:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday","Saturday","Sunday"], "opens": "10:00", "closes": "23:30" }
+    ],
+    "priceRange": "₹₹"
+  }
+  </script>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    (function() {
+      // ---- MENU DATA ----
+      var MENU = [
+        { category: "Royal Signature Biryani", items: [
+          { name: "Chicken Biryani", price: 130, type: "nonveg" },
+          { name: "Mutton Biryani", price: 350, type: "nonveg" },
+          { name: "Raita", price: 20, type: "veg" }
+        ]},
+        { category: "Appetizing Starters", items: [
+          { name: "Dragon Chicken (Dry)", price: 230, type: "nonveg" },
+          { name: "Crispy Chicken (Dry)", price: 220, type: "nonveg" },
+          { name: "Dance For Heaven", price: 220, type: "nonveg" },
+          { name: "Chicken 65 (Oil Fry)", price: 200, type: "nonveg" },
+          { name: "Chicken 65", price: 180, type: "nonveg" },
+          { name: "Chicken Kobiraji", price: 240, type: "nonveg" },
+          { name: "Chicken Popcorn", price: 220, type: "nonveg" },
+          { name: "Sangai Chicken", price: 230, type: "nonveg" },
+          { name: "Fish Chilli Dry", price: 250, type: "nonveg" },
+          { name: "Panfry Fish", price: 230, type: "nonveg" },
+          { name: "Golden Fry Prawn", price: 250, type: "nonveg" },
+          { name: "Crispy Prawn", price: 250, type: "nonveg" },
+          { name: "Stick Fry Chicken", price: 250, type: "nonveg" },
+          { name: "Paneer Chilli (Dry)", price: 220, type: "veg" },
+          { name: "Mushroom Chilli (Dry)", price: 220, type: "veg" },
+          { name: "Honey Chilli Potato", price: 150, type: "veg" },
+          { name: "Veg Manchurian", price: 150, type: "veg" },
+          { name: "Crispy Chilli Baby Corn", price: 200, type: "veg" },
+          { name: "American Corn Chilli Pepper", price: 200, type: "veg" },
+          { name: "American Salt & Pepper", price: 200, type: "veg" },
+          { name: "Pan Fry Fish", price: 250, type: "nonveg" },
+          { name: "Pan Fry Chicken", price: 200, type: "nonveg" },
+          { name: "Veg Stick", price: 180, type: "veg" },
+          { name: "Sauteed Vegetables with Chicken", price: 250, type: "nonveg" },
+          { name: "Sauteed Vegetables", price: 200, type: "veg" },
+          { name: "Coriander Wings", price: 220, type: "nonveg" },
+          { name: "Paneer 65", price: 200, type: "veg" },
+          { name: "Soyabean Chilli (Dry)", price: 150, type: "veg" }
+        ]},
+        { category: "Soups", items: [
+          { name: "Manchow Soup (Veg)", price: 60, type: "veg" },
+          { name: "Manchow Soup (Non-Veg)", price: 100, type: "nonveg" },
+          { name: "Chicken Clear Soup", price: 80, type: "nonveg" },
+          { name: "Sweet Corn Soup (Veg)", price: 70, type: "veg" },
+          { name: "Sweet Corn Soup (Non-Veg)", price: 90, type: "nonveg" },
+          { name: "Hot & Sour Soup (Veg)", price: 70, type: "veg" },
+          { name: "Hot & Sour Soup (Non-Veg)", price: 100, type: "nonveg" },
+          { name: "Mushroom Soup", price: 100, type: "nonveg" },
+          { name: "Lemon Coriander Soup (Veg)", price: 80, type: "veg" },
+          { name: "Lemon Coriander Soup (Non-Veg)", price: 100, type: "nonveg" }
+        ]},
+        { category: "Snacks & Rolls", items: [
+          { name: "Veg Pakora", price: 100, type: "veg" },
+          { name: "Chicken Pakora", price: 140, type: "nonveg" },
+          { name: "Paneer Pakora", price: 150, type: "veg" },
+          { name: "Papad", price: 10, type: "veg" },
+          { name: "Finger Chips", price: 90, type: "veg" },
+          { name: "Chicken Cutlet", price: 80, type: "nonveg" },
+          { name: "Fish Cutlet (Basha Vetki)", price: 150, type: "nonveg" },
+          { name: "Fish Finger", price: 220, type: "nonveg" },
+          { name: "Chicken Lollipop", price: 160, type: "nonveg" },
+          { name: "Egg Roll", price: 50, type: "nonveg" },
+          { name: "Chicken Roll", price: 100, type: "nonveg" },
+          { name: "Egg Chicken Roll", price: 120, type: "nonveg" },
+          { name: "Mix Roll", price: 150, type: "nonveg" },
+          { name: "Paneer Roll", price: 150, type: "veg" }
+        ]},
+        { category: "Indian Main Course", items: [
+          { name: "Chicken Masala", price: 200, type: "nonveg" },
+          { name: "Chicken Bharta", price: 220, type: "nonveg" },
+          { name: "Chicken Dak Bungalow", price: 250, type: "nonveg" },
+          { name: "Chicken Punjabi", price: 250, type: "nonveg" },
+          { name: "Chicken Do Pyaza", price: 180, type: "nonveg" },
+          { name: "Chicken Kasha", price: 170, type: "nonveg" },
+          { name: "Chicken Handi", price: 220, type: "nonveg" },
+          { name: "Chicken Kadai", price: 220, type: "nonveg" },
+          { name: "Mutton Kasha", price: 350, type: "nonveg" },
+          { name: "Mutton Handi", price: 400, type: "nonveg" },
+          { name: "Mutton Kadai", price: 400, type: "nonveg" },
+          { name: "Matar Paneer", price: 200, type: "veg" },
+          { name: "Paneer Butter Masala", price: 200, type: "veg" },
+          { name: "Paneer Handi", price: 220, type: "veg" },
+          { name: "Paneer Kadai", price: 200, type: "veg" },
+          { name: "Mushroom Masala", price: 250, type: "veg" },
+          { name: "Mixed Veg.", price: 180, type: "veg" },
+          { name: "Plain Tarka", price: 80, type: "veg" },
+          { name: "Daab Chingri", price: 300, type: "nonveg" },
+          { name: "Aloo Posto", price: 180, type: "veg" },
+          { name: "Pomfret Shorshe", price: 150, type: "nonveg" },
+          { name: "Ilish Bhapa", price: 300, type: "nonveg" },
+          { name: "Chana Masala", price: 100, type: "veg" },
+          { name: "Egg Tarka", price: 100, type: "nonveg" },
+          { name: "Chicken Tarka", price: 150, type: "nonveg" }
+        ]},
+        { category: "Tandoori & Fresh Breads", items: [
+          { name: "Chicken Tandoori (Full)", price: 450, type: "nonveg" },
+          { name: "Chicken Tandoori (Half)", price: 250, type: "nonveg" },
+          { name: "Chicken Tikka Kebab", price: 200, type: "nonveg" },
+          { name: "Chicken Reshmi Kebab", price: 220, type: "nonveg" },
+          { name: "Tandoori Roti", price: 20, type: "veg" },
+          { name: "Tandoori Butter Roti", price: 25, type: "veg" },
+          { name: "Butter Naan", price: 70, type: "veg" },
+          { name: "Plain Naan", price: 50, type: "veg" },
+          { name: "Lacha Praartha", price: 50, type: "veg" }
+        ]},
+        { category: "Chinese Gravy Side Dishes", items: [
+          { name: "Chicken Chilli (Gravy)", price: 180, type: "nonveg" },
+          { name: "Chicken Manchurian", price: 190, type: "nonveg" },
+          { name: "Schezwan Chicken", price: 200, type: "nonveg" },
+          { name: "Garlic Chicken", price: 180, type: "nonveg" },
+          { name: "Hot Garlic Chicken", price: 180, type: "nonveg" },
+          { name: "Hongkong Chicken", price: 200, type: "nonveg" },
+          { name: "Devil Chicken", price: 200, type: "nonveg" },
+          { name: "Paneer Chilli (Gravy)", price: 220, type: "veg" },
+          { name: "Mushroom Chilli (Gravy)", price: 220, type: "veg" },
+          { name: "Baby Corn Chilli (Gravy)", price: 220, type: "veg" }
+        ]},
+        { category: "Wok-Tossed Fried Rice", items: [
+          { name: "Zeera Rice / Rice (Veg)", price: 100, type: "veg" },
+          { name: "Rice (Egg)", price: 130, type: "nonveg" },
+          { name: "Rice (Chicken)", price: 160, type: "nonveg" },
+          { name: "Rice (Mix)", price: 180, type: "nonveg" },
+          { name: "Schezwan Rice (Veg)", price: 120, type: "veg" },
+          { name: "Schezwan Rice (Egg)", price: 140, type: "nonveg" },
+          { name: "Schezwan Rice (Chicken)", price: 170, type: "nonveg" },
+          { name: "Schezwan Rice (Mix)", price: 220, type: "nonveg" },
+          { name: "Chilli Garlic Rice (Veg)", price: 120, type: "veg" },
+          { name: "Chilli Garlic Rice (Egg)", price: 140, type: "nonveg" },
+          { name: "Chilli Garlic Rice (Chicken)", price: 170, type: "nonveg" },
+          { name: "Chilli Garlic Rice (Mix)", price: 220, type: "nonveg" },
+          { name: "Hongkong Rice (Veg)", price: 130, type: "veg" },
+          { name: "Hongkong Rice (Egg)", price: 150, type: "nonveg" },
+          { name: "Hongkong Rice (Chicken)", price: 180, type: "nonveg" },
+          { name: "Hongkong Rice (Mix)", price: 230, type: "nonveg" }
+        ]},
+        { category: "Noodles & Chowmein", items: [
+          { name: "Veg Noodles", price: 90, type: "veg" },
+          { name: "Egg Noodles", price: 110, type: "nonveg" },
+          { name: "Chicken Noodles", price: 140, type: "nonveg" },
+          { name: "Mix Noodles", price: 170, type: "nonveg" },
+          { name: "Schezwan Noodles (Veg)", price: 90, type: "veg" },
+          { name: "Schezwan Noodles (Egg)", price: 110, type: "nonveg" },
+          { name: "Schezwan Noodles (Chicken)", price: 160, type: "nonveg" },
+          { name: "Schezwan Noodles (Mix)", price: 180, type: "nonveg" },
+          { name: "Chilli Garlic Noodles (Veg)", price: 90, type: "veg" },
+          { name: "Chilli Garlic Noodles (Egg)", price: 110, type: "nonveg" },
+          { name: "Chilli Garlic Noodles (Chicken)", price: 160, type: "nonveg" },
+          { name: "Chilli Garlic Noodles (Mix)", price: 180, type: "nonveg" },
+          { name: "Hongkong Noodles (Veg)", price: 120, type: "veg" },
+          { name: "Hongkong Noodles (Egg)", price: 140, type: "nonveg" },
+          { name: "Hongkong Noodles (Chicken)", price: 170, type: "nonveg" },
+          { name: "Hongkong Noodles (Mix)", price: 200, type: "nonveg" }
+        ]},
+        { category: "Cold Drinks & Refreshments", items: [
+          { name: "Mineral Water 1 L", price: 20, type: "veg" },
+          { name: "Mineral Water 500 ml", price: 10, type: "veg" },
+          { name: "Masala Cold Drinks (Premium)", price: 60, type: "veg" },
+          { name: "Blue Lagoon", price: 60, type: "veg" },
+          { name: "Thums Up 200 ml", price: 15, type: "veg" },
+          { name: "Thums Up 500 ml", price: 30, type: "veg" },
+          { name: "Thums Up 1 L", price: 50, type: "veg" },
+          { name: "Soft Drink Can (Small)", price: 30, type: "veg" },
+          { name: "Soft Drink Can (Large)", price: 40, type: "veg" },
+          { name: "Red Bull", price: 130, type: "veg" },
+          { name: "Cold Coffee (Premium)", price: 80, type: "veg" },
+          { name: "Thums Up 250 ml", price: 20, type: "veg" },
+          { name: "Monster Energy", price: 130, type: "veg" }
+        ]},
+        { category: "Mocktails & Premium Ice Cream", items: [
+          { name: "Blue Lemon", price: 60, type: "veg" },
+          { name: "Masala Cold Drinks", price: 60, type: "veg" },
+          { name: "Lime Soda", price: 60, type: "veg" },
+          { name: "Virgin Mojito", price: 60, type: "veg" },
+          { name: "Ice Cream 25", price: 25, type: "veg" },
+          { name: "Ice Cream 35", price: 35, type: "veg" },
+          { name: "Ice Cream 40", price: 40, type: "veg" },
+          { name: "Ice Cream 45", price: 45, type: "veg" },
+          { name: "Ice Cream 50", price: 50, type: "veg" },
+          { name: "Chocolate 5", price: 5, type: "veg" },
+          { name: "Chocolate 10", price: 10, type: "veg" },
+          { name: "Chocolate 20", price: 20, type: "veg" },
+          { name: "Chocolate 25", price: 25, type: "veg" },
+          { name: "Chocolate 30", price: 30, type: "veg" },
+          { name: "Chocolate 40", price: 40, type: "veg" },
+          { name: "Dahi", price: 20, type: "veg" },
+          { name: "Cold Coffee", price: 80, type: "veg" },
+          { name: "Aam Panna", price: 80, type: "veg" },
+          { name: "Lassi", price: 80, type: "veg" }
+        ]}
+      ];
+
+      // ---- MOBILE NAV ----
+      var hamburger = document.getElementById('hamburgerBtn');
+      var overlay = document.getElementById('mobileNavOverlay');
+      var closeBtn = document.getElementById('closeNavBtn');
+
+      function openNav() { overlay.classList.add('active'); hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow = 'hidden'; }
+      function closeNav() { overlay.classList.remove('active'); hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow = ''; }
+
+      hamburger.addEventListener('click', openNav);
+      closeBtn.addEventListener('click', closeNav);
+      overlay.addEventListener('click', function(e) { if (e.target === overlay) closeNav(); });
+      overlay.querySelectorAll('a').forEach(function(l) { l.addEventListener('click', closeNav); });
+
+      // ---- SMOOTH SCROLL ----
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var id = this.getAttribute('href');
+          if (id === '#') return;
+          var el = document.querySelector(id);
+          if (el) {
+            e.preventDefault();
+            var offset = 80;
+            var top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // ---- SEARCHABLE MENU ----
+      var searchInput = document.getElementById('searchInput');
+      var clearBtn = document.getElementById('clearBtn');
+      var menuOutput = document.getElementById('menuOutput');
+      var resultCount = document.getElementById('resultCount');
+      var chips = document.querySelectorAll('.chip');
+      var activeCategory = 'all';
+
+      function normalize(s) { return s.toLowerCase().replace(/[^\w\s]/g, ' ').trim(); }
+
+      function render() {
+        var q = normalize(searchInput.value);
+        var tokens = q.split(/\s+/).filter(Boolean);
+        var total = 0;
+        var html = '';
+
+        MENU.forEach(function(g) {
+          if (activeCategory !== 'all' && g.category !== activeCategory) return;
+
+          var matched = g.items.filter(function(it) {
+            if (tokens.length === 0) return true;
+            var hay = normalize(it.name + ' ' + it.price + ' rs' + it.price + ' ' + (it.type === 'veg' ? 'veg vegetarian' : 'nonveg non veg'));
+            return tokens.every(function(t) { return hay.indexOf(t) !== -1; });
+          });
+
+          if (matched.length === 0) return;
+          total += matched.length;
+
+          html += '<section class="category-block">';
+          html += '<h2 class="category-title">' + g.category + '</h2>';
+          html += '<div class="item-list">';
+
+          matched.forEach(function(it) {
+            html += '<div class="menu-item">';
+            html += '<div class="item-left">';
+            html += '<span class="veg-dot ' + it.type + '"></span>';
+            html += '<span class="item-name">' + it.name + '</span>';
+            html += '</div>';
+            html += '<div class="item-right">';
+            html += '<span class="item-price">₹' + it.price + '</span>';
+            html += '<span class="item-tag ' + it.type + '">' + (it.type === 'veg' ? 'VEG' : 'NON-VEG') + '</span>';
+            html += '</div></div>';
+          });
+
+          html += '</div></section>';
+        });
+
+        if (total === 0) {
+          menuOutput.innerHTML = '<div class="no-results"><div class="emoji">🔎</div><p>No dishes match your search.</p><p style="font-size:0.9rem; margin-top:0.5rem; color:#7a6a56;">Try "biryani", "chicken", "200" or "roll".</p></div>';
+          resultCount.innerHTML = '';
+          return;
+        }
+
+        menuOutput.innerHTML = html;
+        resultCount.innerHTML = 'Showing <strong>' + total + '</strong> item' + (total === 1 ? '' : 's');
+      }
+
+      searchInput.addEventListener('input', function() {
+        clearBtn.classList.toggle('visible', searchInput.value.length > 0);
+        render();
+      });
+
+      clearBtn.addEventListener('click', function() {
+        searchInput.value = '';
+        clearBtn.classList.remove('visible');
+        searchInput.focus();
+        render();
+      });
+
+      chips.forEach(function(c) {
+        c.addEventListener('click', function() {
+          chips.forEach(function(x) { x.classList.remove('active'); });
+          c.classList.add('active');
+          activeCategory = c.dataset.cat;
+          render();
+        });
+      });
+
+      render();
+    })();
+  </script>
+
+</body>
+</html>
